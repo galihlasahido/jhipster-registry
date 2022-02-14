@@ -40,7 +40,7 @@ To run the cloned repository;
 docker-compose -f src/main/docker/vault.yml up -d
 ```
 
-- The default configured root token is `jhipster-registry`. We shall use the default secrets engine backend mounted on the `secrets` path. Configure secrets using either of `ui`, `cli` or `http`.
+- The default configured root token is `jhipster-registry`. We shall use the default secrets engine backend mounted on the `secret` path. Configure secrets using either of `ui`, `cli` or `http`.
 - Create a new secret sub-path `jhipster-registry/dev` and add the following secret in JSON format. Here `jhipster-registry` refers to the application name and `dev` refers to the development profile. Do follow the same convention to configure secrets of other applications.
 
 ```json
@@ -78,7 +78,7 @@ docker-compose -f src/main/docker/vault.yml up -d
 ```
 
 - Open `vault` server [`ui`](http://localhost:8200/ui/vault/init) to initialize master key shares. In this guide, we shall enter `1` as the number of key shares and `1` as the key threshold value. Do refer to vault documentation for recommended configuration. Note down the initial `root token` and the `key` and keep it at a safe place. You shall require the `key` to unseal the vault server after a restart.
-- Enable secret engine backend `kv` and use `secrets` as the mount path.
+- Enable secret engine backend `kv` and use `secret` as the mount path.
 - Create a new secret sub-path `jhipster-registry/dev` and add the following secrets in JSON format. Here `jhipster-registry` refers to the application name and `dev` refers to the development profile. Do follow the same convention to configure secrets of other applications.
 
 ```json
